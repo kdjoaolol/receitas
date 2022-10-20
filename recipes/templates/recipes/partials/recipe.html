@@ -64,9 +64,15 @@
         {% endif %}
 
         {% if is_detail_page %}
+            {% if recipe.preparation_steps_is_html %}
             <div class='preparation-steps'>
                 {{ recipe.preparation_steps|linebreaksbr }}
             </div>
+            {% else %}
+            <div class='preparation-steps'>
+                {{ recipe.preparation_steps|safe }}
+            </div>
+            {% endif %}
         {% endif %}
     </div>
 </div>
