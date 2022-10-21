@@ -7,5 +7,6 @@ app_name = 'recipes'
 urlpatterns = [
     path('', views.home, name="home"),
     path('recipe/<int:id>/', views.recipe, name="recipe"),
-    path('recipes/category/<int:category_id>/', views.category, name='category')
+    path('recipes/category/<int:category_id>/', views.category, name='category') # noqa: E501, E261
+
 ]

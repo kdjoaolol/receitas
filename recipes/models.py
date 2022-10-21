@@ -3,8 +3,9 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
+
 class Category(models.Model):
-    
+
     name = models.CharField(max_length=65)
 
     def __str__(self):
@@ -27,10 +28,10 @@ class Recipe(models.Model):
     is_published = models.BooleanField(default=False)
     cover = models.ImageField(upload_to='recipes/covers/%Y/%m/%d/')
     category = models.ForeignKey(
-                                Category, 
-                                on_delete=models.SET_NULL, 
-                                null=True, 
-                                blank=True, 
+                                Category,
+                                on_delete=models.SET_NULL,
+                                null=True,
+                                blank=True,
                                 default=None)
     author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
 
